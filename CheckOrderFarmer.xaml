@@ -1,0 +1,109 @@
+﻿<UserControl x:Class="cwainmenuexs1.CheckOrderFarmer"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:local="clr-namespace:cwainmenuexs1"
+             mc:Ignorable="d" 
+             Loaded="form_loaded"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <materialDesign:TransitioningContent x:Name="TransitioningContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInfromLeft, Duration=0:0:0.8}">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom">
+                <StackPanel>
+                    <StackPanel Margin="10,10,10,5">
+                        <StackPanel Height="480" Width="742" Background="#FF91B6AC">
+                            <StackPanel Orientation="Horizontal" >
+                                <TextBlock Text="Available orders" Margin="40 10 0 0" FontSize="12" FontWeight="Bold"/>
+                                <Label Margin="50 0" x:Name="lbl_error_orders" FontSize="12" Foreground="Red" FontWeight="Bold"/>
+                            </StackPanel>
+                            <DataGrid x:Name="DataGridView" Height="185" Margin="15,10,15.4,10" VerticalScrollBarVisibility="Auto" Background="Snow" HorizontalGridLinesBrush="DarkGreen" VerticalGridLinesBrush="DarkGreen" HorizontalContentAlignment="Center" HorizontalAlignment="Center" HorizontalScrollBarVisibility="Auto" AutoGenerateColumns="False" CanUserAddRows="False" RowBackground="Snow" FontWeight="Bold" SelectionChanged="DatagridView_selctionChanged">
+
+
+
+                                <DataGrid.Resources>
+                                    <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                                        <Setter Property="Background" Value="#f2222222"/>
+                                        <Setter Property="BorderThickness" Value="1"/>
+                                        <Setter Property="Foreground" Value="Snow"/>
+                                        <Setter Property="Padding" Value="10"/>
+                                        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                    </Style>
+                                </DataGrid.Resources>
+
+
+
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Width="90" Header="Order No" Binding="{Binding oid}" IsReadOnly="True" />
+                                    <DataGridTextColumn Width="90" Header="Buyer no" Binding="{Binding bno}" IsReadOnly="True"/>
+                                    <DataGridTextColumn Width="120" Header="Buyer Name" Binding="{Binding buyer_name}" IsReadOnly="True"/>
+                                    <DataGridTextColumn Width="100" Header="Item Type" Binding="{Binding item_Type}" IsReadOnly="True"/>
+                                    <DataGridTextColumn Width="100" Header="Item Orderd" Binding="{Binding item}" IsReadOnly="True"/>
+                                    <DataGridTextColumn Width="80" Header="Quantity" Binding="{Binding Quantity}" IsReadOnly="True"/>
+                                    <DataGridTemplateColumn Header="Hold A bit" Width="110">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <Button HorizontalAlignment="Center" Margin="5" Padding="10 0 10 0" x:Name="bnt_bit" Content="Bid" Background="#FF207A2E" Click="bnt_bit_Click"/>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+
+
+
+                                </DataGrid.Columns>
+
+                            </DataGrid>
+
+                            <StackPanel Orientation="Horizontal" Margin="0">
+                                <TextBlock Text="Your Bidings" Margin="35 0 0 0" FontSize="12" FontWeight="Bold"/>
+                                <Label Margin="30 0" x:Name="lbl_error_bids" FontSize="12" Foreground="Red" FontWeight="Bold"/>
+                            </StackPanel>
+                            <DataGrid x:Name="DataGridView2" Height="175" Margin="0 10" VerticalScrollBarVisibility="Auto" HorizontalGridLinesBrush="DarkGreen" VerticalGridLinesBrush="DarkGreen" HorizontalContentAlignment="Center" HorizontalAlignment="Center" HorizontalScrollBarVisibility="Auto" AutoGenerateColumns="False" CanUserAddRows="False" RowBackground="Snow" FontWeight="Bold" SelectionChanged="DatagridView_selctionChanged" Background="White" BorderBrush="#FFF63232">
+
+
+
+                                <DataGrid.Resources>
+                                    <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                                        <Setter Property="Background" Value="Maroon"/>
+                                        <Setter Property="BorderThickness" Value="1"/>
+                                        <Setter Property="Foreground" Value="Snow"/>
+                                        <Setter Property="Padding" Value="10"/>
+                                        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                    </Style>
+                                </DataGrid.Resources>
+
+
+
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Width="90" Header="Order No" Binding="{Binding oid}" IsReadOnly="True" />
+                                    <DataGridTextColumn Width="90" Header="Buyer no" Binding="{Binding bno}" IsReadOnly="True"/>
+                                    <DataGridTextColumn Width="140" Header="Buyer Name" Binding="{Binding buyer_name}" IsReadOnly="True"/>
+                                    <DataGridTextColumn Width="100" Header="Item Type" Binding="{Binding item_Type}" IsReadOnly="True"/>
+                                    <DataGridTextColumn Width="100" Header="Item Orderd" Binding="{Binding item}" IsReadOnly="True"/>
+                                    <DataGridTextColumn Width="100" Header="Quantity" Binding="{Binding Quantity}" IsReadOnly="True"/>
+                                    <DataGridTemplateColumn Header="Status" Width="100">
+                                        <DataGridTemplateColumn.CellTemplate >
+                                            <DataTemplate>
+                                                <Button HorizontalAlignment="Center" Margin="5" Padding="10 0 10 0" x:Name="bnt_bit" Content="Bidded" Background="REd" />
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+
+
+
+
+                                </DataGrid.Columns>
+
+
+
+                            </DataGrid>
+                        </StackPanel>
+
+
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+        </materialDesign:TransitioningContent>
+    </Grid>
+</UserControl>

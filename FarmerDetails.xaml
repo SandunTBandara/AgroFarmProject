@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="cwainmenuexs1.FarmerDetails"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+               xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:local="clr-namespace:cwainmenuexs1"
+             xmlns:rdlcreport="clr-namespace:Microsoft.Reporting.WinForms;assembly=Microsoft.ReportViewer.WinForms"
+             mc:Ignorable="d" 
+             Loaded="UserControl_Loaded"
+             d:DesignHeight="471" d:DesignWidth="742">
+    <Grid>
+        <materialDesign:TransitioningContent x:Name="TransitioningContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInfromLeft, Duration=0:0:0.8}">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom">
+                <StackPanel>
+                    <StackPanel Margin="10,10,10,5">
+                        <StackPanel Height="471" Width="742" Background="#FF91B6AC">
+                           
+                            <TextBlock x:Name="___No_Name_" Text="Farmer Details" FontSize="40" FontFamily="Cooper Black" Foreground="AliceBlue" Margin="406,7,10.4,341"/>
+                            <Button   Click="Button_Click"   Margin="14,-625,557.4,0" Content="Take Buyer Report" Background="#FF156224" Height="41" />
+                            <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="306" Margin="22,-273,0,0" VerticalAlignment="Top" Width="699" SelectionChanged="dataGrid_SelectionChanged" FontSize="14" Background="{x:Null}" FontWeight="Bold"/>
+
+
+                        </StackPanel>
+
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+        </materialDesign:TransitioningContent>
+    </Grid>
+</UserControl>
