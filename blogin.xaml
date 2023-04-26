@@ -1,0 +1,43 @@
+﻿<Window x:Class="cwainmenuexs1.blogin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:cwainmenuexs1"
+        mc:Ignorable="d"
+        Title="blogin" Height="450" Width="800"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+         WindowStartupLocation="CenterScreen">
+    <Grid Opacity="0.87" >
+        <Grid.Background>
+            <ImageBrush ImageSource="pexels-min-an-911804.jpg"/>
+        </Grid.Background>
+
+
+        <Grid Grid.ColumnSpan="6" HorizontalAlignment="Left" Height="41" Margin="-1,-2,0,0" VerticalAlignment="Top" Width="805" Background="#FF09242B">
+            <Button x:Name="Buttopower" Width="30" Background="{x:Null}" BorderBrush="Gray" Height="30" Padding="0" Foreground="Gray" Click="Buttopower_Click" Margin="765,5,10,10">
+                <materialDesign:PackIcon Kind="Power"/>
+            </Button>
+            <Button x:Name="Button_Back" Width="30" Background="{x:Null}" BorderBrush="#FF6C6E6A" Height="30" Padding="0" Foreground="Gray"  Margin="697,5,10,10" Click="Button_Back_Click">
+                <materialDesign:PackIcon Kind="StepBackward" BorderBrush="#FFFDFDFD"/>
+            </Button>
+
+        </Grid>
+        <StackPanel HorizontalAlignment="Left" Height="267" Margin="218,71,0,0" VerticalAlignment="Top" Width="387" Background="#FF7AE88E" Opacity="0.55"/>
+        <TextBlock x:Name="lbl_fname" HorizontalAlignment="Left" Height="27" Margin="245,159,0,0" TextWrapping="Wrap" Text="User Id" VerticalAlignment="Top" Width="79" RenderTransformOrigin="0.696,0.63" FontSize="22" FontWeight="Bold"/>
+        <TextBlock x:Name="lbl_fpassword" HorizontalAlignment="Left" Height="27" Margin="245,224,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Width="103" FontSize="22" FontWeight="Bold"/>
+        <TextBox x:Name="txt_funame" HorizontalAlignment="Left" Margin="385,159,0,0" Height="30" VerticalAlignment="Top" Width="176" Cursor="Hand" Background="#FFDBFFD3"  >
+
+        </TextBox>
+        <PasswordBox x:Name="txt_fpassword" HorizontalAlignment="Left" Margin="385,224,0,0" Height="30" VerticalAlignment="Top" Width="176" Background="#FFDBFFD3" />
+        <Button x:Name="btn_flogin" Click="Btn_flogin_Click" Content="Login" HorizontalAlignment="Left" Margin="356,280,0,138" Width="114" Background="#FF3FB63F" FontSize="18" FontWeight="Bold"  />
+        <TextBlock HorizontalAlignment="Left" Height="28" Margin="283,98,0,0" TextWrapping="Wrap" Text="businessman Login" VerticalAlignment="Top" Width="266" FontFamily="Snap ITC" FontSize="24" />
+        <StackPanel HorizontalAlignment="Left" Height="63" Margin="218,357,0,0" VerticalAlignment="Top" Width="387" Background="#FF7AE88E" Opacity="0.55">
+
+        </StackPanel>
+        <TextBlock HorizontalAlignment="Left" Margin="269,376,0,0" TextWrapping="Wrap" Text="Don't have an account?" VerticalAlignment="Top" Width="193" FontSize="18" Height="31"/>
+        <Button x:Name="btn_signup" Content="Sign up" Margin="451,373,0,0" HorizontalAlignment="Left"  Width="98" VerticalAlignment="Top" Height="31" FontSize="16" FontWeight="Bold" Background="{x:Null}" BorderBrush="{x:Null}" Click="Btn_signup_Click" />
+    </Grid>
+</Window>
